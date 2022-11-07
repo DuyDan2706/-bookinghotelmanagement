@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rd1View063XhaJ5aW/43RwG/IKW2dXLKM1AhImyO3sskZTMexyv5mgBUHl947E9BqqB+OqTPzq6eXk1vDzXUbw==",
+  "dgSpecHash": "kY6EDMcQeU3qLTXxaN1WGRDXWdMLQlp0iNxRmJxfYQxTzKDZBhmAwg1hSdqFZssmG7LZEA4FvW7sV4yOuam/QQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Hotel_Management-main\\BusinessObject\\BusinessObject.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\hotel\\-bookinghotelmanagement\\BusinessObject\\BusinessObject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",

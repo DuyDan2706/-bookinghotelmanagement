@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataAccess.Repository;
+using HotelWeb.Utils.FileUploadService;
 
 namespace HotelWeb
 {
@@ -32,7 +33,12 @@ namespace HotelWeb
             });
             services.AddHttpContextAccessor();
             services.AddSingleton<IAccountRepository, AccountRepository>();
-           
+        
+       
+            services.AddSingleton<ICouponRepository, CouponRepository>();
+         
+   
+            services.AddSingleton<IFileUploadService, LocalFileUploadService>();
             services.AddDistributedMemoryCache(); 
             
         }

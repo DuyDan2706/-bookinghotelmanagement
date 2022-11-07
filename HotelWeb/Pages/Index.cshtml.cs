@@ -5,21 +5,31 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessObject.Model;
+using DataAccess.Repository;
 
-namespace BookingHotelManagement.Pages
+namespace HotelWeb.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+      
+     
+        [BindProperty]
+        public Room Room { get; set; }
+        public IList<Room> RoomList { get; set; }
+        public IList<RoomType> RoomTypeList { get; set; }
+        public IActionResult OnGet()
+        {           
+            try
+            {
+              
+            }
+            catch (Exception ex)
+            {
+                TempData["Message"] = ex.Message;
+            }
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
-        public void OnGet()
-        {
-
+            return Page();
         }
     }
 }
