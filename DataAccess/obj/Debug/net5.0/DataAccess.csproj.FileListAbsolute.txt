@@ -43,6 +43,7 @@ D:\C#BACKEND\-bookinghotelmanagement\DataAccess\obj\Debug\net5.0\DataAccess.dll
 D:\C#BACKEND\-bookinghotelmanagement\DataAccess\obj\Debug\net5.0\refint\DataAccess.dll
 D:\C#BACKEND\-bookinghotelmanagement\DataAccess\obj\Debug\net5.0\DataAccess.pdb
 D:\C#BACKEND\-bookinghotelmanagement\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+<<<<<<< HEAD
 D:\FPT-CN7\PRN211\1-GroupProject\-bookinghotelmanagement\DataAccess\obj\Debug\net5.0\DataAccess.csproj.AssemblyReference.cache
 D:\FPT-CN7\PRN211\1-GroupProject\-bookinghotelmanagement\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
 D:\FPT-CN7\PRN211\1-GroupProject\-bookinghotelmanagement\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
@@ -58,3 +59,20 @@ D:\FPT-CN7\PRN211\1-GroupProject\-bookinghotelmanagement\DataAccess\bin\Debug\ne
 D:\FPT-CN7\PRN211\1-GroupProject\-bookinghotelmanagement\DataAccess\bin\Debug\net5.0\BusinessObject.pdb
 D:\FPT-CN7\PRN211\1-GroupProject\-bookinghotelmanagement\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CopyComplete
 D:\FPT-CN7\PRN211\1-GroupProject\-bookinghotelmanagement\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+=======
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\bin\Debug\net5.0\DataAccess.dll
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\bin\Debug\net5.0\ref\DataAccess.dll
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\bin\Debug\net5.0\DataAccess.pdb
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\bin\Debug\net5.0\BusinessObject.dll
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\bin\Debug\net5.0\BusinessObject.pdb
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\obj\Debug\net5.0\DataAccess.csproj.AssemblyReference.cache
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CopyComplete
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\obj\Debug\net5.0\DataAccess.dll
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+D:\Semester 8\PRN221\BookingHotelManagement\DataAccess\obj\Debug\net5.0\DataAccess.pdb
+>>>>>>> 5a1e7d7c95f0b6b7f844f58d4e1dcdcf289468d0
