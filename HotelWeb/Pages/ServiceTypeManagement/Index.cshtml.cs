@@ -12,43 +12,33 @@ using HotelWeb.Utils.FileUploadService;
 using System.ComponentModel.DataAnnotations;
 using HotelWeb.Validation;
 
-namespace HotelWeb.Pages.ServiceManagement
+namespace HotelWeb.Pages.ServiceTypeManagement
 {
     public class IndexModel : PageModel
     {
-        private readonly IServiceRepository serviceRepository;
         private readonly IServiceTypeRepository serviceTypeRepository;
-        private readonly IFileUploadService fileUploadService;
-        public IndexModel(IServiceRepository _serviceRepository, IServiceTypeRepository _serviceTypeRepository, IFileUploadService _fileUploadService)
-        {
-            serviceRepository = _serviceRepository;
-            serviceTypeRepository = _serviceTypeRepository;
-            fileUploadService = _fileUploadService;
 
+        public IndexModel(IServiceTypeRepository _serviceTypeRepository)
+        {
+
+            this.serviceTypeRepository = _serviceTypeRepository;
         }
         [BindProperty]
-        public Service Service { get; set; }
+       public ServiceType ServiceType { get; set; }
 
-        [Required(ErrorMessage = " image can not be empty")]
-        [DataType(DataType.Upload)]
-        [Display(Name = "Choose an image to upload")]
-        [ProductImageValidation]
-        [BindProperty]
-        public IFormFile ImageFile { get; set; }
-        public IList<Service> ServiceList { get; set; }
         public IList<ServiceType> ServiceTypeList { get; set; }
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
         public IActionResult OnGet()
         {
+
             if (HttpContext.Session.GetString("ROLE") != "AD")
             {
                 return RedirectToPage("./Index");
             }
             try
             {
-                ServiceList = serviceRepository.GetServices().ToList();
                 ServiceTypeList = serviceTypeRepository.GetServicesType().ToList();
             }
             catch (Exception ex)
@@ -58,23 +48,22 @@ namespace HotelWeb.Pages.ServiceManagement
 
             return Page();
         }
-        public async Task<IActionResult> OnPostCreate()
+        public IActionResult OnPost()
         {
-
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             try
             {
-                string filePath = await fileUploadService.UploadFileAsync(ImageFile);
-                Service service = new Service
+                ServiceType acc = new ServiceType
                 {
-                    Id = Service.Id,
-                    Title = Service.Title,
-                    Image = ImageFile.FileName,
-                    Amount = Service.Amount,
-                    InStock = Service.InStock,
-                    ServiceTypeId = Service.ServiceTypeId,
+                    Id = ServiceType.Id,
+                    Title = ServiceType.Title,
+                    Description = ServiceType.Description,
                     Active = true
                 };
-                serviceRepository.AddService(service);
+                serviceTypeRepository.AddServiceType(ServiceType);
 
             }
             catch (Exception ex)
@@ -88,12 +77,10 @@ namespace HotelWeb.Pages.ServiceManagement
         {
             if (!string.IsNullOrEmpty(SearchString))
             {
-                ServiceList = serviceRepository.SearchByName(SearchString.ToLower().Trim());
-                ServiceTypeList = serviceTypeRepository.GetServicesType().ToList();
+                ServiceTypeList = serviceTypeRepository.SearchByName(SearchString.ToLower().Trim());
             }
             else
             {
-                ServiceList = serviceRepository.GetServices().ToList();
                 ServiceTypeList = serviceTypeRepository.GetServicesType().ToList();
             }
             return Page();
@@ -102,23 +89,8 @@ namespace HotelWeb.Pages.ServiceManagement
         {
             try
             {
-                Service service = serviceRepository.GetServiceById(id);
-                serviceRepository.DeleteService(service);
-
-            }
-            catch (Exception ex)
-            {
-                TempData["Message"] = ex.Message;
-            }
-            return RedirectToPage("./Index");
-
-        }
-        public IActionResult OnPostUpdateActive()
-        {
-            try
-            {
-                Service service = serviceRepository.GetServiceById(Service.Id);
-                serviceRepository.UpdateActive(service.Id, service.Active);
+                ServiceType serviceType = serviceTypeRepository.GetServiceTypeById(id);
+                serviceTypeRepository.DeleteServiceType(serviceType);
 
             }
             catch (Exception ex)
