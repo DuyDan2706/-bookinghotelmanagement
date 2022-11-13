@@ -38,7 +38,6 @@ namespace HotelWeb
             services.AddHttpContextAccessor();
             services.AddSingleton<IAccountRepository, AccountRepository>();
         
-       
             services.AddSingleton<ICouponRepository, CouponRepository>();
             services.AddSingleton<IRoomRepository, RoomRepository>();
             services.AddSingleton<IRoomTypeRepository, RoomTypeRepository>();
@@ -50,6 +49,9 @@ namespace HotelWeb
 
             services.AddSingleton<IServiceRepository, ServiceRepository>();
             services.AddSingleton<IServiceTypeRepository, ServiceTypeRepository>();
+            services.AddSingleton<IServiceInRoomRepository, ServiceInRoomRepository>();
+
+
             services.AddDistributedMemoryCache(); 
             
         }
