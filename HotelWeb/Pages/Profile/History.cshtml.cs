@@ -12,8 +12,17 @@ namespace HotelWeb.Pages.Profile
 {
     public class HistoryModel : PageModel
     {
-      
-      
+        private readonly IBookRoomRepository bookRoomRepository;
+        private readonly IRoomInBookingRepository roomInBookingRepository;
+        private readonly IRoomRepository roomRepository;
+        public HistoryModel(IRoomRepository _roomRepository, IBookRoomRepository _bookRoomRepository, IRoomInBookingRepository _roomInBookingRepository)
+        {
+
+            bookRoomRepository = _bookRoomRepository;
+            roomInBookingRepository = _roomInBookingRepository;
+            roomRepository = _roomRepository;
+        }
+
         public IList<BookRoom> BookRoom { get; set; }
         public IList<RoomInBooking> RoomInBookings { get; set; }
         public IList<Room> Room { get; set; }
@@ -23,9 +32,11 @@ namespace HotelWeb.Pages.Profile
             {
                 if (HttpContext.Session.GetString("ROLE") != "Customer")
                 {
-                    return RedirectToPage("./Login");
+                    return Page();
                 }
-            
+                BookRoom = bookRoomRepository.GetHistory(int.Parse(HttpContext.Session.GetString("Id")));
+                RoomInBookings = roomInBookingRepository.GetRooms().ToList();
+                Room = roomRepository.GetRooms().ToList();
             }
             catch
             {

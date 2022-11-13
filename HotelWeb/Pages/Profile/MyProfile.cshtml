@@ -1,5 +1,6 @@
 ﻿
 @page
+
 @model HotelWeb.Pages.Profile.MyProfileModel
 @{
 }
@@ -295,7 +296,10 @@
     <nav class="nav nav-borders">
         <a class="nav-link active ms-0" asp-page="#" >Profile</a>
         <a class="nav-link" asp-page="/Profile/ChangePassword" >Change Pasword</a>
-        <a class="nav-link" asp-page="/Profile/History">History</a>
+        @if (@HttpContextAccessor.HttpContext.Session.GetString("ROLE") != "Employee")
+        {
+            <a class="nav-link" asp-page="/Profile/History">History</a>
+        }
     </nav>
     <hr class="mt-0 mb-4">
     <form method="post" enctype="multipart/form-data" asp-page-handler="Create">
