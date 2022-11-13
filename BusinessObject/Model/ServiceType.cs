@@ -24,7 +24,6 @@ namespace BusinessObject.Model
         [Required(ErrorMessage = "Description Type can not be empty")]
         public string Description { get; set; }
         public bool? Active { get; set; }
-
         public virtual ICollection<Service> Service { get; set; }
     }
 }
