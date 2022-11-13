@@ -47,6 +47,9 @@ namespace HotelWeb
 
             services.AddSingleton<IBookRoomRepository, BookRoomRepository>();
             services.AddSingleton<IRoomInBookingRepository, RoomInBookingRepository>();
+
+            services.AddSingleton<IServiceRepository, ServiceRepository>();
+            services.AddSingleton<IServiceTypeRepository, ServiceTypeRepository>();
             services.AddDistributedMemoryCache(); 
             
         }
