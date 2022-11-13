@@ -8692,23 +8692,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\huynh\\.nuget\\packages\\": {},
+    "C:\\Users\\admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#BACKEND\\-bookinghotelmanagement\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "D:\\FPT-CN7\\PRN211\\1-GroupProject\\-bookinghotelmanagement\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "D:\\C#BACKEND\\-bookinghotelmanagement\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\huynh\\.nuget\\packages\\",
-      "outputPath": "D:\\C#BACKEND\\-bookinghotelmanagement\\DataAccess\\obj\\",
+      "projectPath": "D:\\FPT-CN7\\PRN211\\1-GroupProject\\-bookinghotelmanagement\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "D:\\FPT-CN7\\PRN211\\1-GroupProject\\-bookinghotelmanagement\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\huynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8717,14 +8717,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\C#BACKEND\\-bookinghotelmanagement\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "D:\\C#BACKEND\\-bookinghotelmanagement\\BusinessObject\\BusinessObject.csproj"
+            "D:\\FPT-CN7\\PRN211\\1-GroupProject\\-bookinghotelmanagement\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\FPT-CN7\\PRN211\\1-GroupProject\\-bookinghotelmanagement\\BusinessObject\\BusinessObject.csproj"
             }
           }
         }
@@ -8772,7 +8773,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
