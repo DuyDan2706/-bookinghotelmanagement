@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataAccess.Repository;
 using HotelWeb.Utils.FileUploadService;
+using Microsoft.EntityFrameworkCore;
+using BusinessObject.Model;
 
 namespace HotelWeb
 {
@@ -31,12 +33,15 @@ namespace HotelWeb
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
+            services.AddDbContext<HotelManagementContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddHttpContextAccessor();
             services.AddSingleton<IAccountRepository, AccountRepository>();
         
        
             services.AddSingleton<ICouponRepository, CouponRepository>();
-         
+            services.AddSingleton<IRoomRepository, RoomRepository>();
+            services.AddSingleton<IRoomTypeRepository, RoomTypeRepository>();
    
             services.AddSingleton<IFileUploadService, LocalFileUploadService>();
             services.AddDistributedMemoryCache(); 
