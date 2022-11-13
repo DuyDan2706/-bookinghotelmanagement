@@ -19,16 +19,20 @@ namespace HotelWeb.Pages.RoomManagement
         private readonly IRoomRepository roomRepository;
         private readonly IRoomTypeRepository roomTypeRepository;
         private readonly IFileUploadService fileUploadService;
-        /*private readonly IBookRoomRepository bookRoomRepository;
-        private readonly IRoomInBookingRepository roomInBookingRepository;*/
-        public IndexModel(IRoomRepository _roomRepository, IRoomTypeRepository _roomTypeRepository, IFileUploadService _fileUploadService/*, IBookRoomRepository _bookRoomRepository, IRoomInBookingRepository _roomInBookingRepository*/)
+        private readonly IBookRoomRepository bookRoomRepository;
+        private readonly IRoomInBookingRepository roomInBookingRepository;
+        public IndexModel(IRoomRepository _roomRepository,
+            IRoomTypeRepository _roomTypeRepository,
+            IFileUploadService _fileUploadService,
+            IBookRoomRepository _bookRoomRepository,
+            IRoomInBookingRepository _roomInBookingRepository)
 
         {
             roomRepository = _roomRepository;
             roomTypeRepository = _roomTypeRepository;
             fileUploadService = _fileUploadService;
-            /*bookRoomRepository = _bookRoomRepository;
-            roomInBookingRepository = _roomInBookingRepository;*/
+            bookRoomRepository = _bookRoomRepository;
+            roomInBookingRepository = _roomInBookingRepository;
         }
         [BindProperty]
         public Room Room { get; set; }
@@ -112,12 +116,17 @@ namespace HotelWeb.Pages.RoomManagement
             }
             return Page();
         }
-       /* public IActionResult OnPostUpdateActive(int id)
+        /*public IActionResult OnPostUpdateActive(int id)
         {
             try
             {
 
-                RoomBookingList = bookRoomRepository.GetStatus(today, today.AddMonths(1)).Where(x => x.Status == "BOOKED" || x.Status == "CHECKIN" || x.Status == "CHECKOUT").ToList();
+                RoomBookingList = bookRoomRepository.GetStatus(today
+                    , today.AddMonths(1))
+                    .Where(x => x.Status == "BOOKED" ||
+                    x.Status == "CHECKIN" ||
+                    x.Status == "CHECKOUT")
+                    .ToList();
                 foreach (var item in RoomBookingList)
                 {
                     RoomNotEmpty = roomInBookingRepository.GetRoomInBooking(item.Id);
